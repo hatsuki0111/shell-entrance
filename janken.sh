@@ -13,6 +13,7 @@ aite=$(($random%3))
 echo -n "あなたの手をいれてください[012]?"
 read jibun
 
+<<COMMENTOUT
 #入力判定if
 if [ $jibun = "0" -o $jibun = "1" -o $jibun = "2" ];then
     echo input ok
@@ -33,11 +34,13 @@ case $jibun in
     1) echo input ok ;;
     2) echo input ok ;;
 esac
+COMMENTOUT
 
 #入力判定swicth
 case $jibun in
     0 | 1 | 2 ) echo input ok;;
-	     *) exit 1;;
+	   Q|q) echo "エラー";exit 9;;#qかQを入力したら無限ループの停止
+	     *) echo "エラー";exit 1;;
 esac
 
 
