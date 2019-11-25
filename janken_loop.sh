@@ -22,7 +22,9 @@ done
 COMMENTOUT
 
 <<COMMENTOUT
-while [ $i -ne $max ]
+
+#$i > $max
+while [ $i -lt $max ]
 do
     sh janken.sh
     #iの値を+1するには((算術演算))
