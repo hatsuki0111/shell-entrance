@@ -12,11 +12,11 @@ __HELP__
 }
 #listでcat
 #addで>>
-#delでsedは^で先頭と$の最後で正規表現する
+#delでsedは^で先頭と$の最後で正規表現する -iはGNU系のみ
 #helpでusage
 case $1 in
 	list) cat list.ping;;
-	add ) echo $2>>list.ping;;
+	add ) print $2>>list.ping;;
 	del ) sed -i -e '/^'$2'$/d' list.ping;;
 	help|* )usage;;
 esac
